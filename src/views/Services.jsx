@@ -2,18 +2,45 @@
 import { services } from "../data";
 import FadeIn from "../components/FadeIn";
 import { motion } from "framer-motion";
+// import { title, subtitle, icon } from "../data/service";
 
-const Service = () => {
+// ... (your other imports)
+import shippingIcon from "../assets/free-shiping-icon.svg";
+import paymentIcon from "../assets/quick-payment-icon.svg";
+import supportIcon from "../assets/support-icon.svg";
+
+const services1 = [
+  {
+    title: "Free Shipping",
+    subtitle: "No charge for your delivery",
+    icon: shippingIcon,
+  },
+  {
+    title: "Quick Payment",
+    subtitle: "100% secure",
+    icon: paymentIcon,
+  },
+  {
+    title: "24/7 Support",
+    subtitle: "Don't hesitate to contact us",
+    icon: supportIcon,
+  },
+];
+
+
+const Services = () => {
   return (
     <section className="bg-white px-4 py-12">
-      <div className="mx-auto w-fit">
-      <Card />
+      <div className="mx-auto flex flex-wrap justify-center">
+        {services1.map((service, index) => (
+          <Card key={index} service={service} />
+        ))}
       </div>
     </section>
   );
 };
 
-const Card = () => {
+const Card = ({ service }) => {
   return (
     <motion.div
       whileHover="hover"
@@ -26,11 +53,15 @@ const Card = () => {
           scale: 1.05,
         },
       }}
-      className="relative h-80 w-80 shrink-0 overflow-hidden rounded-xl bg-[linear-gradient(90deg,_#2AF598_0%,_#009EFD_100%)] p-8"
+      className="relative h-80 w-80 shrink-0 overflow-hidden rounded-xl bg-[linear-gradient(90deg,_#2AF598_0%,_#009EFD_100%)] p-8 m-4"
     >
       <div className="relative z-10 text-black">
         <span className="mb-3 block w-fit rounded-full bg-[linear-gradient(90deg,_#2AF598_0%,_#009EFD_100%)] px-3 py-0.5 text-sm font-bold text-black">
-          Pro
+        <img
+              src={service.icon}
+              className="max-h-[50px] max-w-[50px] bg-black opacity-75"
+              alt=""
+            />
         </span>
         <motion.span
           initial={{ scale: 0.85 }}
@@ -45,13 +76,8 @@ const Card = () => {
           }}
           className="my-2 block origin-top-left font-mono text-6xl font-black leading-[1.2]"
         >
-          $299/
-          <br />
-          Month
+          {service.title}
         </motion.span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, rem.
-        </p>
       </div>
       <Background />
     </motion.div>
@@ -116,4 +142,4 @@ const Background = () => {
   );
 };
 
-export default Service;
+export default Services;
