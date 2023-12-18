@@ -12,17 +12,14 @@ import supportIcon from "../assets/support-icon.svg";
 const services1 = [
   {
     title: "Free Shipping",
-    subtitle: "No charge for your delivery",
     icon: shippingIcon,
   },
   {
     title: "Quick Payment",
-    subtitle: "100% secure",
     icon: paymentIcon,
   },
   {
     title: "24/7 Support",
-    subtitle: "Don't hesitate to contact us",
     icon: supportIcon,
   },
 ];
@@ -30,6 +27,7 @@ const services1 = [
 
 const Services = () => {
   return (
+    <FadeIn delay={0.2} direction="down" padding fullWidth>
     <section className="bg-white px-4 py-12">
       <div className="mx-auto flex flex-wrap justify-center">
         {services1.map((service, index) => (
@@ -37,6 +35,7 @@ const Services = () => {
         ))}
       </div>
     </section>
+    </FadeIn>
   );
 };
 

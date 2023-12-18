@@ -7,6 +7,7 @@ const Carousels = () => {
     <div className="bg-white">
       <HorizontalScrollCarousel />
     </div>
+    
   );
 };
 
@@ -16,16 +17,18 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-45%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-white">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+      <FadeIn delay={0.2} direction="up" padding fullWidth>
         <motion.div style={{ x }} className="flex gap-4">
           {cards.map((card) => {
             return <Card card={card} key={card.id} />;
           })}
         </motion.div>
+        </FadeIn>
       </div>
     </section>
   );
