@@ -10,9 +10,9 @@ import sunIcon from "./assets/sun-icon.svg";
 import waterIcon from "./assets/water-icon.svg";
 import temperatureIcon from "./assets/temperature-icon.svg";
 
-export const heroTitle = "Bring Serenity to Your Place With Interior Plants";
+export const heroTitle = "Premium Seats from Our Growing Community";
 export const heroSubtitle =
-  "find your dream plant for your home decoration with us, and we will make it happen.";
+  "Find your ideal Seats pieces with us! Made by Community.";
 
 export const services = [
   {

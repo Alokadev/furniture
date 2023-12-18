@@ -1,5 +1,6 @@
 // local imports
 import Care from "./views/Care";
+import Carousels from "./views/Carousels";
 import Footer from "./views/Footer";
 import Hero from "./views/Hero";
 import Products from "./views/Products";
@@ -10,7 +11,8 @@ function App() {
   return (
     <>
       <Hero />
-      {/* <Services /> */}
+      <Carousels/>
+      <Services />
       {/* <Products /> */}
       {/* <Reference /> */}
       {/* <Care /> */}
